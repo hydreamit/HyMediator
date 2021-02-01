@@ -18,7 +18,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 
-repo source -> 'https://github.com/hydreamit/Specs'
+source 'https://github.com/hydreamit/Specs'
 
 pod 'HyMediator'
 ```
