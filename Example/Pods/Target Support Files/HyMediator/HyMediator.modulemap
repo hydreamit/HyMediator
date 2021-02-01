@@ -1,0 +1,6 @@
+framework module HyMediator {
+  umbrella header "HyMediator-umbrella.h"
+
+  export *
+  module * { export * }
+}

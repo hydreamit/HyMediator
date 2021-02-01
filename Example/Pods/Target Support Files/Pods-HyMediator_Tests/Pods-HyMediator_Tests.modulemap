@@ -1,0 +1,6 @@
+framework module Pods_HyMediator_Tests {
+  umbrella header "Pods-HyMediator_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

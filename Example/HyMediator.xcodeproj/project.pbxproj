@@ -14,8 +14,8 @@
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
-		6003F59E195388D20070C39A /* HYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* HYAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* HYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* HYViewController.m */; };
+		6003F59E195388D20070C39A /* HyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* HyAppDelegate.m */; };
+		6003F5A7195388D20070C39A /* HyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* HyViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -24,6 +24,12 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		B50A705225C7D29000DF3EBB /* HyTestAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50A704425C7D29000DF3EBB /* HyTestAViewController.m */; };
+		B50A705325C7D29000DF3EBB /* HyComponentA.m in Sources */ = {isa = PBXBuildFile; fileRef = B50A704725C7D29000DF3EBB /* HyComponentA.m */; };
+		B50A705425C7D29000DF3EBB /* HyTestBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50A704B25C7D29000DF3EBB /* HyTestBViewController.m */; };
+		B50A705525C7D29000DF3EBB /* HyComponentB.m in Sources */ = {isa = PBXBuildFile; fileRef = B50A704C25C7D29000DF3EBB /* HyComponentB.m */; };
+		B50A705625C7D29000DF3EBB /* HyMainComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B50A704E25C7D29000DF3EBB /* HyMainComponent.m */; };
+		B50A705725C7D29000DF3EBB /* HyTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50A704F25C7D29000DF3EBB /* HyTestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D1B90E17987413473EA8CD4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		34450F8AD875E5ED991E842D /* HyMediator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HyMediator.podspec; path = ../HyMediator.podspec; sourceTree = "<group>"; };
-		3A772EB70A8CDF1DA5474F25 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2D1B90E17987413473EA8CD4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		34450F8AD875E5ED991E842D /* HyMediator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HyMediator.podspec; path = ../HyMediator.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3A772EB70A8CDF1DA5474F25 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3BDF08AAE24EF3AE1DA66569 /* Pods-HyMediator_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyMediator_Tests.debug.xcconfig"; path = "Target Support Files/Pods-HyMediator_Tests/Pods-HyMediator_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HyMediator_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyMediator_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,10 +55,10 @@
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* HyMediator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HyMediator-Prefix.pch"; sourceTree = "<group>"; };
-		6003F59C195388D20070C39A /* HYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYAppDelegate.h; sourceTree = "<group>"; };
-		6003F59D195388D20070C39A /* HYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* HYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* HYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYViewController.m; sourceTree = "<group>"; };
+		6003F59C195388D20070C39A /* HyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyAppDelegate.h; sourceTree = "<group>"; };
+		6003F59D195388D20070C39A /* HyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyAppDelegate.m; sourceTree = "<group>"; };
+		6003F5A5195388D20070C39A /* HyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyViewController.h; sourceTree = "<group>"; };
+		6003F5A6195388D20070C39A /* HyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* HyMediator_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyMediator_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -63,6 +69,18 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98C2C4B216A8302A46A65EA4 /* Pods_HyMediator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyMediator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B50A704425C7D29000DF3EBB /* HyTestAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyTestAViewController.m; sourceTree = "<group>"; };
+		B50A704525C7D29000DF3EBB /* HyComponentA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyComponentA.h; sourceTree = "<group>"; };
+		B50A704625C7D29000DF3EBB /* HyTestAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyTestAViewController.h; sourceTree = "<group>"; };
+		B50A704725C7D29000DF3EBB /* HyComponentA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyComponentA.m; sourceTree = "<group>"; };
+		B50A704925C7D29000DF3EBB /* HyComponentB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyComponentB.h; sourceTree = "<group>"; };
+		B50A704A25C7D29000DF3EBB /* HyTestBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyTestBViewController.h; sourceTree = "<group>"; };
+		B50A704B25C7D29000DF3EBB /* HyTestBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyTestBViewController.m; sourceTree = "<group>"; };
+		B50A704C25C7D29000DF3EBB /* HyComponentB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyComponentB.m; sourceTree = "<group>"; };
+		B50A704E25C7D29000DF3EBB /* HyMainComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyMainComponent.m; sourceTree = "<group>"; };
+		B50A704F25C7D29000DF3EBB /* HyTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyTestViewController.m; sourceTree = "<group>"; };
+		B50A705025C7D29000DF3EBB /* HyMainComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyMainComponent.h; sourceTree = "<group>"; };
+		B50A705125C7D29000DF3EBB /* HyTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyTestViewController.h; sourceTree = "<group>"; };
 		D65D51738ED9155C1824C9A8 /* Pods-HyMediator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyMediator_Example.release.xcconfig"; path = "Target Support Files/Pods-HyMediator_Example/Pods-HyMediator_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E8DCFB75755F89E7CF5A7A25 /* Pods-HyMediator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyMediator_Example.debug.xcconfig"; path = "Target Support Files/Pods-HyMediator_Example/Pods-HyMediator_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E9DCDA40FED8DAF41885F5C0 /* Pods_HyMediator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyMediator_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +121,6 @@
 				3BDF08AAE24EF3AE1DA66569 /* Pods-HyMediator_Tests.debug.xcconfig */,
 				F36989DC95C1867BD737EB9E /* Pods-HyMediator_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -144,11 +161,14 @@
 		6003F593195388D20070C39A /* Example for HyMediator */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* HYAppDelegate.h */,
-				6003F59D195388D20070C39A /* HYAppDelegate.m */,
+				B50A704325C7D29000DF3EBB /* Module_A */,
+				B50A704825C7D29000DF3EBB /* Module_B */,
+				B50A704D25C7D29000DF3EBB /* Module_main */,
+				6003F59C195388D20070C39A /* HyAppDelegate.h */,
+				6003F59D195388D20070C39A /* HyAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* HYViewController.h */,
-				6003F5A6195388D20070C39A /* HYViewController.m */,
+				6003F5A5195388D20070C39A /* HyViewController.h */,
+				6003F5A6195388D20070C39A /* HyViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -195,6 +215,39 @@
 				2D1B90E17987413473EA8CD4 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		B50A704325C7D29000DF3EBB /* Module_A */ = {
+			isa = PBXGroup;
+			children = (
+				B50A704525C7D29000DF3EBB /* HyComponentA.h */,
+				B50A704725C7D29000DF3EBB /* HyComponentA.m */,
+				B50A704625C7D29000DF3EBB /* HyTestAViewController.h */,
+				B50A704425C7D29000DF3EBB /* HyTestAViewController.m */,
+			);
+			path = Module_A;
+			sourceTree = "<group>";
+		};
+		B50A704825C7D29000DF3EBB /* Module_B */ = {
+			isa = PBXGroup;
+			children = (
+				B50A704925C7D29000DF3EBB /* HyComponentB.h */,
+				B50A704C25C7D29000DF3EBB /* HyComponentB.m */,
+				B50A704A25C7D29000DF3EBB /* HyTestBViewController.h */,
+				B50A704B25C7D29000DF3EBB /* HyTestBViewController.m */,
+			);
+			path = Module_B;
+			sourceTree = "<group>";
+		};
+		B50A704D25C7D29000DF3EBB /* Module_main */ = {
+			isa = PBXGroup;
+			children = (
+				B50A705025C7D29000DF3EBB /* HyMainComponent.h */,
+				B50A704E25C7D29000DF3EBB /* HyMainComponent.m */,
+				B50A705125C7D29000DF3EBB /* HyTestViewController.h */,
+				B50A704F25C7D29000DF3EBB /* HyTestViewController.m */,
+			);
+			path = Module_main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +311,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -325,10 +379,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HyMediator_Example/Pods-HyMediator_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HyMediator/HyMediator.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyMediator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -364,9 +420,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F59E195388D20070C39A /* HYAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* HYViewController.m in Sources */,
+				6003F59E195388D20070C39A /* HyAppDelegate.m in Sources */,
+				B50A705325C7D29000DF3EBB /* HyComponentA.m in Sources */,
+				B50A705425C7D29000DF3EBB /* HyTestBViewController.m in Sources */,
+				6003F5A7195388D20070C39A /* HyViewController.m in Sources */,
+				B50A705525C7D29000DF3EBB /* HyComponentB.m in Sources */,
+				B50A705625C7D29000DF3EBB /* HyMainComponent.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				B50A705725C7D29000DF3EBB /* HyTestViewController.m in Sources */,
+				B50A705225C7D29000DF3EBB /* HyTestAViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

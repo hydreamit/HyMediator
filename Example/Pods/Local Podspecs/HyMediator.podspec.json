@@ -1,0 +1,27 @@
+{
+  "name": "HyMediator",
+  "version": "0.0.1",
+  "summary": "components Mediator",
+  "description": "TODO: components Mediator for RAC signals",
+  "homepage": "https://github.com/hydreamit/HyMediator",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hydreamit": "hydreamit@163.com"
+  },
+  "source": {
+    "git": "https://github.com/hydreamit/HyMediator.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "HyMediator/Classes/**/*",
+  "dependencies": {
+    "ReactiveObjC": [
+
+    ]
+  }
+}

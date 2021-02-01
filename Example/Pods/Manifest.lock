@@ -1,0 +1,23 @@
+PODS:
+  - HyMediator (0.0.1):
+    - ReactiveObjC
+  - ReactiveObjC (3.1.1)
+
+DEPENDENCIES:
+  - HyMediator (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - ReactiveObjC
+
+EXTERNAL SOURCES:
+  HyMediator:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HyMediator: 8c60c198b3a3a34601d3a70f3f36f2f91e6090a7
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+
+PODFILE CHECKSUM: 087cf723387a23b4da940dea052120afd9bc956b
+
+COCOAPODS: 1.9.3
