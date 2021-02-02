@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) RACCommand *rightItemCommand;
 
+@property (nonatomic,strong) RACSignal<UIColor *> *backgroundColorSignal;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

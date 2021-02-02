@@ -45,10 +45,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HyMediator : NSObject
 
-+ (void)addComponent:(NSString *)component cls:(Class<HyComponentSignalProtocol>)cls;
+/// 添加组件
+/// @param component 组件别名
+/// @param cls 组件实现类
+/// @param cache 是否缓存组件对象
++ (void)addComponent:(NSString *)component
+                 cls:(Class<HyComponentSignalProtocol>)cls
+               cache:(BOOL)cache;
+
+/// 移除组件
+/// @param component 组件别名
 + (void)removeComponent:(NSString *)component;
 
+
+/// 获取组件对象
 + (id<HyComponentSignalProtocol> (^)(NSString *component))component;
+
 
 @end
 

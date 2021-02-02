@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HyTestBViewController : UIViewController
 
 @property (nonatomic,copy) void (^touchAction)(void);
+@property (nonatomic,copy) void (^rightItemAction)(NSString *);
 
 @end
 

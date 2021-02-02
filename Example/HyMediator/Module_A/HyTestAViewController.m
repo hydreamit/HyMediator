@@ -27,6 +27,10 @@
     }
 }
 
+- (void)changeTitle:(NSString *)title {
+    self.navigationItem.title = title;
+}
+
 
 - (void)dealloc {
     NSLog(@"%s", __func__);

@@ -8,9 +8,6 @@
 
 #import "HyTestBViewController.h"
 
-@interface HyTestBViewController ()
-
-@end
 
 @implementation HyTestBViewController
 
@@ -19,6 +16,12 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = UIColor.orangeColor;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"全局事件B" style:UIBarButtonItemStyleDone target:self action:@selector(action)];
+}
+
+- (void)action {
+    !self.rightItemAction ?: self.rightItemAction(@"全局事件B");
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

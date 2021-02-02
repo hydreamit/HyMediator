@@ -19,6 +19,10 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Module A" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.rightBarButtonItem.rac_command = self.rightItemCommand;
+    
+    if (self.backgroundColorSignal) {
+        RAC(self.view, backgroundColor) = self.backgroundColorSignal;
+    }
 }
 
 - (void)dealloc {

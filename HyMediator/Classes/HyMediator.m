@@ -57,7 +57,7 @@
 - (RACSubject *)subjectForKey:(NSString *)key input:(id)input {
     
     if ([self isMemberOfClass:HyBaseComponent.class]) {
-        return (id)[RACSubject error:[self notFoundComponentError]];
+        return (id)[RACSignal error:[self notFoundComponentError]];
     }
     
     NSString *selString = [NSString stringWithFormat:@"subject_%@:", key];
@@ -66,7 +66,7 @@
         return ((RACSubject *(*)(id, SEL, id))objc_msgSend)(self , subjectSel, input);
     }
     
-    return (id)[RACSubject error:[self notFoundKeyError:key]];
+    return (id)[RACSignal error:[self notFoundKeyError:key]];
 }
 
 - (RACCommand *)commandForKey:(NSString *)key input:(id)input {
@@ -128,6 +128,7 @@
 
 @interface HyMediator ()
 @property (nonatomic,strong) NSMutableDictionary<NSString *, Class<HyComponentSignalProtocol>> *componentDict;
+@property (nonatomic,strong) NSMutableDictionary<NSString *, id<HyComponentSignalProtocol>> *componentCacheDict;
 @property (nonatomic,strong) dispatch_semaphore_t semaphore;
 @end
 @implementation HyMediator
@@ -137,6 +138,7 @@
     dispatch_once(&onceToken, ^{
         _instance = [[super allocWithZone:NULL] init];
         _instance.componentDict = @{}.mutableCopy;
+        _instance.componentCacheDict = @{}.mutableCopy;
         _instance.semaphore = dispatch_semaphore_create(1);
     });
     return _instance;
@@ -152,12 +154,17 @@
 }
 
 + (void)addComponent:(NSString *)component
-                 cls:(Class<HyComponentSignalProtocol>)cls {
+                 cls:(Class<HyComponentSignalProtocol>)cls
+               cache:(BOOL)cache {
+    
     if (!component.length || !cls) {  return; }
     
     HyMediator *mediator = [self shareInstance];
     dispatch_semaphore_wait(mediator.semaphore, DISPATCH_TIME_FOREVER);
     [mediator.componentDict setObject:cls forKey:component];
+    if (cache) {
+        [mediator.componentCacheDict setObject:(id)@1 forKey:component];
+    }
     dispatch_semaphore_signal(mediator.semaphore);
 }
 
@@ -167,6 +174,7 @@
     HyMediator *mediator = [self shareInstance];
     dispatch_semaphore_wait(mediator.semaphore, DISPATCH_TIME_FOREVER);
     [mediator.componentDict removeObjectForKey:component];
+    [mediator.componentCacheDict removeObjectForKey:component];
     dispatch_semaphore_signal(mediator.semaphore);
 }
 
@@ -175,11 +183,21 @@
         if (!cp.length) { cp = @""; }
         
         HyMediator *mediator = [self shareInstance];
+        
         Class cls = [mediator.componentDict objectForKey:cp];
         if (!cls) { cls = HyBaseComponent.class; }
-        id<HyComponentSignalProtocol> cpt = [[cls alloc] init];
-        if ([cpt isKindOfClass:HyBaseComponent.class]) {
-            ((HyBaseComponent *)cpt).componentName = cp;
+        
+        id<HyComponentSignalProtocol> cpt = [mediator.componentCacheDict objectForKey:cp];
+        BOOL cache = [cpt isKindOfClass:NSNumber.class];
+        
+        if (!cpt || cache) {
+            cpt = [[cls alloc] init];
+            if ([cpt isKindOfClass:HyBaseComponent.class]) {
+                ((HyBaseComponent *)cpt).componentName = cp;
+            }
+            if (cache) {
+                [mediator.componentCacheDict setObject:cpt forKey:cp];
+            }
         }
         return cpt;
     };

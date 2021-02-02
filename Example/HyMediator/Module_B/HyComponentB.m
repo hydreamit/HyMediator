@@ -10,17 +10,26 @@
 #import "HyTestBViewController.h"
 
 
+@interface HyComponentB ()
+@property (nonatomic,strong) RACSubject *rightItemSubject;
+@end
+
 @implementation HyComponentB
 
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [HyMediator addComponent:@"B" cls:self];
+        [HyMediator addComponent:@"B" cls:self cache:YES];
     });
 }
 
 - (RACSignal *)signal_push:(UINavigationController *)input {
+    
     HyTestBViewController *vc = HyTestBViewController.new;
+    vc.rightItemAction = ^(NSString *string){
+        [self.rightItemSubject sendNext:string];
+    };
+    
     return
     [[RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         [input pushViewController:vc animated:YES];
@@ -33,5 +42,18 @@
         }];
     }] takeUntil:vc.rac_willDeallocSignal];
 }
+
+- (RACSubject *)subject_rightItemEvent:(id)input {
+    return self.rightItemSubject;
+}
+
+
+- (RACSubject *)rightItemSubject {
+    if (!_rightItemSubject) {
+        _rightItemSubject = [RACSubject subject];
+    }
+    return _rightItemSubject;
+}
+
 
 @end
