@@ -2,8 +2,8 @@
 //  HyMediator.m
 //  HyMediator
 //
-//  Created by hydreamit on 02/01/2019.
-//  Copyright (c) 2019 hydreamit. All rights reserved.
+//  Created by hydreamit on 02/01/2018.
+//  Copyright (c) 2018 hydreamit. All rights reserved.
 //
 
 #import "HyMediator.h"
@@ -13,7 +13,6 @@
 @interface HyBaseComponent ()
 @property (nonatomic,assign) NSString *componentName;
 @end
-
 @implementation HyBaseComponent
 
 - (RACSignal *(^)(NSString *key, id input))signal {
@@ -29,7 +28,6 @@
         @strongify(self);
         return [self subjectForKey:key input:input];
     };
-    
 }
 - (RACCommand *(^)(NSString *key, id input))command {
     @weakify(self);
@@ -127,8 +125,8 @@
 
 
 @interface HyMediator ()
-@property (nonatomic,strong) NSMutableDictionary<NSString *, Class<HyComponentSignalProtocol>> *componentDict;
-@property (nonatomic,strong) NSMutableDictionary<NSString *, id<HyComponentSignalProtocol>> *componentCacheDict;
+@property (nonatomic,strong) NSMutableDictionary<NSString *, Class<HyComponentProtocol>> *componentDict;
+@property (nonatomic,strong) NSMutableDictionary<NSString *, id<HyComponentProtocol>> *componentCacheDict;
 @property (nonatomic,strong) dispatch_semaphore_t semaphore;
 @end
 @implementation HyMediator
@@ -154,7 +152,7 @@
 }
 
 + (void)addComponent:(NSString *)component
-                 cls:(Class<HyComponentSignalProtocol>)cls
+                 cls:(Class<HyComponentProtocol>)cls
                cache:(BOOL)cache {
     
     if (!component.length || !cls) {  return; }
@@ -178,8 +176,8 @@
     dispatch_semaphore_signal(mediator.semaphore);
 }
 
-+ (id<HyComponentSignalProtocol> (^)(NSString *cp))component {
-    return ^id<HyComponentSignalProtocol> (NSString *cp) {
++ (id<HyComponentProtocol> (^)(NSString *cp))component {
+    return ^id<HyComponentProtocol> (NSString *cp) {
         if (!cp.length) { cp = @""; }
         
         HyMediator *mediator = [self shareInstance];
@@ -187,7 +185,7 @@
         Class cls = [mediator.componentDict objectForKey:cp];
         if (!cls) { cls = HyBaseComponent.class; }
         
-        id<HyComponentSignalProtocol> cpt = [mediator.componentCacheDict objectForKey:cp];
+        id<HyComponentProtocol> cpt = [mediator.componentCacheDict objectForKey:cp];
         BOOL cache = [cpt isKindOfClass:NSNumber.class];
         
         if (!cpt || cache) {

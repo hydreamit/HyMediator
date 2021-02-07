@@ -2,20 +2,18 @@
 //  HyMediator.h
 //  HyMediator
 //
-//  Created by hydreamit on 02/01/2019.
-//  Copyright (c) 2019 hydreamit. All rights reserved.
+//  Created by hydreamit on 02/01/2018.
+//  Copyright (c) 2018 hydreamit. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-#import <UIKit/UIKit.h>
-
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@protocol HyComponentSignalProtocol <NSObject>
+@protocol HyComponentProtocol <NSObject>
 @property (nonatomic,assign,readonly) NSString *componentName;
 - (RACSignal *(^)(NSString *key, id _Nullable input))signal;
 - (RACSubject *(^)(NSString *key, id _Nullable input))subject;
@@ -25,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// 中间件组件基础实现类
-@interface HyBaseComponent : NSObject<HyComponentSignalProtocol>
+@interface HyBaseComponent : NSObject<HyComponentProtocol>
 /// 组件子类重写方法 或  直接实现方法：signal_key:
 - (RACSignal *)signalForKey:(NSString *)key input:(id)input;
 /// 组件子类重写方法 或  直接实现方法：subject_key:
@@ -50,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param cls 组件实现类
 /// @param cache 是否缓存组件对象
 + (void)addComponent:(NSString *)component
-                 cls:(Class<HyComponentSignalProtocol>)cls
+                 cls:(Class<HyComponentProtocol>)cls
                cache:(BOOL)cache;
 
 /// 移除组件
@@ -59,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// 获取组件对象
-+ (id<HyComponentSignalProtocol> (^)(NSString *component))component;
++ (id<HyComponentProtocol> (^)(NSString *component))component;
 
 
 @end

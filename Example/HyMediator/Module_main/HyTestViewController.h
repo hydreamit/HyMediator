@@ -2,8 +2,8 @@
 //  HyTestViewController.h
 //  HyMediator
 //
-//  Created by hydreamit on 02/01/2019.
-//  Copyright (c) 2019 hydreamit. All rights reserved.
+//  Created by hydreamit on 02/01/2018.
+//  Copyright (c) 2018 hydreamit. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) RACCommand *rightItemCommand;
 
 @property (nonatomic,strong) RACSignal<UIColor *> *backgroundColorSignal;
-
 
 @end
 
